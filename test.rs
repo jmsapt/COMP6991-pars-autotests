@@ -1,6 +1,6 @@
 //! # Note to Marker
 //! These are self written autotests. Working on CSE requires the BINARY_PATH, and CARGO_RUN_CMD to be updated accordingly.
-//! If working on CSE, be sure to start birdie and set its port accoringly.
+//! **IMPORTANT:** If working on CSE, be sure to start birdie and set its port accoringly.
 //!
 //! # Requirements
 //! The only requirements to use these tests are the following:
@@ -19,14 +19,14 @@
 #![allow(warnings, unused)]
 
 // ----- Local Params -----
-const BINARY_PATH: &str = "~/pars/target/debug/pars";
-const CARGO_CMD: &str = "cargo";
-const REMOTE_PORT: u16 = 22;
-
-// ----- CSE Params -----
 // const BINARY_PATH: &str = "~/pars/target/debug/pars";
-// const CARGO_RUN_CMD: &str = "6991 cargo run";
-// const REMOTE_PORT: u16 = 1234;
+// const CARGO_CMD: &str = "cargo";
+// const REMOTE_PORT: u16 = 22;
+ 
+// ----- CSE Params -----
+const BINARY_PATH: &str = "~/pars/target/debug/pars";
+const CARGO_CMD: &str = "6991";
+const REMOTE_PORT: u16 = 1234;
 
 const KEY_PATH: &str = "~/.ssh/cs6991/cs6991-id";
 const HOST: &str = "localhost";
@@ -98,7 +98,7 @@ struct ParsProgram {
 impl ParsProgram {
     pub fn new_local(distribution: Distribution, term_type: Option<TerminationType>) -> Self {
         let mut cmd = Command::new(CARGO_CMD);
-        cmd.args(["run", "--"]);
+        cmd.args(["cargo", "run", "--"]);
         let dist_args = match distribution {
             Distribution::Local(num) => vec!["-J".to_string(), format!("{num}")],
             Distribution::Remote(remotes) => {
