@@ -1,5 +1,5 @@
 //! # Note to Marker
-//! These are self written autotests. Working on CSE requires the BINARY_PATH, and CARGO_RUN_CMD to be updated accordingly.
+//! These are self written autotests. Working on CSE requires the BINARY_PATH, and REMOTE_PORT to be updated accordingly.
 //! **IMPORTANT:** If working on CSE, be sure to start birdie and set its port accoringly.
 //!
 //! # Requirements
@@ -18,11 +18,6 @@
 //! run repeat tests with just `cargo test`.
 #![allow(warnings, unused)]
 
-// ----- Local Params -----
-// const BINARY_PATH: &str = "~/pars/target/debug/pars";
-// const CARGO_CMD: &str = "cargo";
-// const REMOTE_PORT: u16 = 22;
- 
 // ----- CSE Params -----
 const BINARY_PATH: &str = "~/pars/target/debug/pars";
 const CARGO_CMD: &str = "6991";
